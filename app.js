@@ -8,8 +8,8 @@ app.use(express.static('public'));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.listen(3000);
-console.log('listening on port 3000!!!!');
+app.listen(process.env.PORT || 3000, function(){
+console.log('listening on port 3000!!!!')});
 
 app.get('/',function(req,res){
     res.sendFile(__dirname + '/signup.html');
@@ -41,7 +41,7 @@ app.post('/',function(req,res){
 
     const options = {  
         method: "POST",
-        auth: "akshaya:0ca874a43b8a65810406cb4ee8673cf8-us18"
+        auth: "akshaya:303ace5e21e80653f03e363ec5cd04dd-us18"
      }
 
      const request = https.request(url, options, function(response){
